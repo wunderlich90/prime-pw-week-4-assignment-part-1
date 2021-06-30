@@ -15,11 +15,11 @@ console.log('Test - should say "Hello World!"', hello());
 // 2. Function to return an personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
 function helloName( name ) {
-  console.log('Hello,' + ' ' + name + '!');
-  return;
+  console.log(`Hello, ${name}!`);
+  return name;
 } // end helloName
 // Remember to call the function to test
-console.log(helloName('Jon Snow'));
+helloName('Jon Snow');
 
 // 3. Function to add two numbers together & return the result
 function addNumbers( firstNumber, secondNumber ) {
@@ -74,9 +74,15 @@ console.log('running getLast:', getLast(composerArray));
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
 function find( value, array ){
-  for (value of array) {}
-}
-
+  for (const element of array) {
+    if (element === value) {
+      return true;
+    } //end if
+  } //end for
+  return false;
+} //end find
+let valueArray = [23,78,985,42,13,1200];
+console.log('running find:', find(42, valueArray));
 // ----------------------
 // Stretch Goals
 // ----------------------
